@@ -1,6 +1,5 @@
 from skimage import io
 from skimage.color import rgb2gray
-import matplotlib.pyplot as plt
 import math
 
 
