@@ -50,3 +50,62 @@ weight_point = (int((max(points, key=lambda t: t[0])[0] - min(points, key=lambda
 distances = get_distances(points, weight_point)
 haralick = get_haralick(distances, len(points))
 print("Współczynnik Haralicka: " + str(haralick))
+
+import numpy as np
+#1
+y = np.random.random(25)
+#2
+y=y.reshape(5,5)
+print(y)
+#3
+y[:,4]=0
+y[4,:]=0
+print(y)
+#4
+y=y+5
+print(y)
+#5
+print(np.any(y==6))
+#6
+x=np.random.random(25).reshape(5,5)
+print("x\n",x)
+print("x+y\n",(x+y))
+print("x-y\n",(x-y))
+#7
+i=np.eye(4,3)
+print(i)
+b=np.ones((3,5), dtype=int)
+b[:,2]=2
+b[0,4]=6
+print(b)
+c=np.diag([1,2,3,4])
+c=c+2
+print(c)
+#8
+z=np.random.random_integers(0,30,4*4).reshape(4,4)
+#z=np.random.randn(4,4)
+z=np.sort(z, axis=None).reshape(4,4)
+print(z)
+#9
+w=np.random.random_integers(1,10,30)
+hi = np.argmax(np.bincount(w))
+print(hi,"\n",w)
+#10
+
+w=np.where(w<3,0,w)
+w=np.where(w>8,0,w)
+print(w)
+#11
+jj=np.random.random_integers(-10,30,36).reshape(6,6)
+je=np.extract(jj%3==0,jj)
+print(jj,"\n",je)
+#12
+
+#13
+print(np.roots([4,3,-4]))
+print(np.roots([14,4,-4,2]))
+#print(np.roots([1,0,-4]))
+#14
+day =np.arange("2019-03","2019-04",dtype=("datetime64[D]"))
+print(day)
+print(np.extract(np.is_busday(day),day))
